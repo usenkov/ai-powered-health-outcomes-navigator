@@ -103,7 +103,12 @@ const App: React.FC = () => {
   }, [initialInputs]);
 
   const fetchAiNarrativeSummary = useCallback(async (currentResults: Results, currentInputs: Inputs, goal: StudyGoal, design: StudyDesign, model: AiModel, lang: Language) => {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      setAiNarrativeSummary("Error: API key not configured. Please set GEMINI_API_KEY in your .env.local file.");
+      return;
+    }
+    const ai = new GoogleGenAI({ apiKey });
 
     const formatValue = (val: number | string | undefined | null, precision = 2) => {
       if (typeof val === 'number' && isFinite(val)) return val.toFixed(precision);
@@ -218,7 +223,12 @@ ${individualImpactPrompt}
   }, []);
 
   const fetchAiInterpretation = useCallback(async (currentResults: Results, currentInputs: Inputs, goal: StudyGoal, design: StudyDesign, model: AiModel, lang: Language) => {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      setAiInterpretation("Error: API key not configured. Please set GEMINI_API_KEY in your .env.local file.");
+      return;
+    }
+    const ai = new GoogleGenAI({ apiKey });
 
     const formatValue = (val: number | string | undefined | null, precision = 2) => {
       if (typeof val === 'number' && isFinite(val)) return val.toFixed(precision);
