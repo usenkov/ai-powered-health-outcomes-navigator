@@ -487,7 +487,8 @@ export const translations: Record<Language, any> = {
     }
 };
 
-export const getTooltips = (lang: Language) => ({
+export const getTooltips = (lang: Language) => {
+  const tooltipsMap = {
     en: {
       studyGoal: "This choice is crucial. It allows the app to use the correct epidemiological terms (like 'Risk Increase' vs. 'Risk Reduction') and helps the AI provide a more relevant clinical interpretation of your findings.",
       studyDesign: "The study design determines the strength of the evidence. Selecting the correct design allows the AI to provide a more accurate interpretation of your results, including potential biases and the ability to infer causality.",
@@ -616,6 +617,8 @@ export const getTooltips = (lang: Language) => ({
       type1Error: "Ошибка I рода (α): Вероятность обнаружения статистически значимого эффекта, когда его на самом деле не существует ('ложноположительный' результат). Обычно устанавливается на уровне 5% (p < 0.05).",
       statisticalPower: "Статистическая мощность (1-β): Вероятность того, что исследование обнаружит эффект, который на самом деле присутствует. Мощность 80% или выше традиционно считается адекватной. Низкая мощность означает, что исследование было слишком малым, чтобы надежно обнаружить эффект.",
       type2Error: "Ошибка II рода (β): Вероятность не обнаружить эффект, который на самом деле присутствует ('ложноотрицательный' результат). Это обратная величина к статистической мощности (β = 1 - Мощность)."
-    },
-  }[lang];
+    }
+  };
+
+  return tooltipsMap[lang];
 };
