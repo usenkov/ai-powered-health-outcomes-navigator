@@ -1,0 +1,40 @@
+/* Global styles for AI-Powered Health Outcomes Navigator */
+
+/* TailwindCSS is loaded via CDN in index.html, so this file contains only custom overrides if needed */
+
+/* Ensure proper box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins and padding */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom prose styles for AI-generated content */
+.prose {
+  max-width: none;
+}
+
+.prose p {
+  margin-bottom: 1em;
+}
+
+.prose h4 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}
