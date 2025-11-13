@@ -1,0 +1,5 @@
+{
+  "name": "AI Powered Health Outcomes Navigator",
+  "description": "A modern web application for healthcare professionals to calculate and interpret key epidemiological risk metrics from a 2x2 table. It provides calculations for Relative Risk, Odds Ratio, and Attributable Risk.",
+  "requestFramePermissions": []
+}
