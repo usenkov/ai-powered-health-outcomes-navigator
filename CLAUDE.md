@@ -42,7 +42,7 @@ npm run preview
 
 ### Core Application Structure
 
-**App.tsx** (1146 lines) - Main application component containing:
+**App.tsx** (1155 lines) - Main application component containing:
 - All statistical calculation logic (normalCDF, calculatePValueFromZ, calculateRequiredSampleSize)
 - Three distinct page views: calculator, interpretation (AI report), narrativeSummary (AI summary)
 - State management for inputs, results, AI interpretations, language selection
@@ -78,11 +78,10 @@ The app performs epidemiological calculations for different study designs:
 
 ### Internationalization (i18n.ts)
 
-**Critical file** containing:
+**Critical file** (624 lines) containing:
 - All UI translations for 3 languages: English, Ukrainian, Russian
 - Study design labels and goal labels
 - Tooltip content (via `getTooltips()` function)
-- 2000+ lines of translation data
 
 When modifying UI text, always update all three language variants.
 
